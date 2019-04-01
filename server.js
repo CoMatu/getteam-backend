@@ -4,6 +4,8 @@ const bodyParser = require('koa-bodyparser')
 const Router = require('koa-router')
 const r = require('rethinkdb')
 
+const cors = require('koa2-cors')
+
 const passport = require('koa-passport'); //реализация passport для Koa
 const LocalStrategy = require('passport-local'); //локальная стратегия авторизации
 const JwtStrategy = require('passport-jwt').Strategy; // авторизация через JWT
@@ -23,6 +25,7 @@ const db = async() => {
 
 server
 .use(passport.initialize())
+.use(cors())
 .use(bodyParser())
 .use(router.routes())
 .use(router.allowedMethods())
