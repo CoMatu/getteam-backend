@@ -49,3 +49,8 @@
 2019-04-01T18:36:48.079155000 1.036833s notice: Server ready, "iMac_Vyacheslav_local_2yq" d38d728b-3b60-4351-8867-68e4939f0b1d
 2019-04-01T18:36:49.853890000 2.811607s info: Table 989cdbed-4c9d-49a7-aa67-4fd55a439688: Starting a new Raft election for term 3.
 2019-04-01T18:36:50.261086000 3.218811s info: Table 989cdbed-4c9d-49a7-aa67-4fd55a439688: This server is Raft leader for term 3. Latest log index is 6.
+2019-04-01T21:24:40.403263000 10073.577752s notice: Removing file /Users/matu1/Documents/AngularProjects/getteam-backend/rethinkdb_data/989cdbed-4c9d-49a7-aa67-4fd55a439688
+2019-04-01T21:24:40.403274000 10073.577763s info: Table 989cdbed-4c9d-49a7-aa67-4fd55a439688: Deleted the table.
+2019-04-01T21:24:52.867846000 10086.042602s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: Starting a new Raft election for term 1.
+2019-04-01T21:24:52.868075000 10086.042830s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: Added replica on this server.
+2019-04-01T21:24:53.011207000 10086.185966s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: This server is Raft leader for term 1. Latest log index is 0.

@@ -25,10 +25,22 @@ const db = async() => {
 
 server
 .use(passport.initialize())
-.use(cors())
 .use(bodyParser())
 .use(router.routes())
 .use(router.allowedMethods())
+.use(cors({
+  origin: function(ctx) {
+    if (ctx.url === '/test') {
+      return false;
+    }
+    return '*';
+  },
+  exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+  maxAge: 5,
+  credentials: true,
+  allowMethods: ['GET', 'POST', 'DELETE'],
+  allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+}))
 .use(logger('tiny')).listen(3001)
 
 
@@ -140,7 +152,7 @@ const insertUser = async(ctx, next) => {
 
   const login = async(ctx, next) => {
     await next()
-    console.log(ctx.request.query)
+//    console.log(ctx.request.query)
     ctx.body = 'получен запрос на авторизацию'
  }
 
@@ -148,5 +160,5 @@ router
 .get('/users', getUsers)
 .get('/users/:name', getUser)
 .post('/users/auth/sign-in', login)
-.post('/users', insertUser)
+.post('/users/auth/sign-up', insertUser)
 
