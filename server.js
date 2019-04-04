@@ -4,7 +4,7 @@ const bodyParser = require('koa-bodyparser')
 const Router = require('koa-router')
 const r = require('rethinkdb')
 
-const cors = require('koa2-cors')
+const cors = require('@koa/cors')
 
 const passport = require('koa-passport'); //реализация passport для Koa
 const LocalStrategy = require('passport-local'); //локальная стратегия авторизации
@@ -24,23 +24,11 @@ const db = async() => {
 }
 
 server
+.use(cors())
 .use(passport.initialize())
 .use(bodyParser())
 .use(router.routes())
 .use(router.allowedMethods())
-.use(cors({
-  origin: function(ctx) {
-    if (ctx.url === '/test') {
-      return false;
-    }
-    return '*';
-  },
-  exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
-  maxAge: 5,
-  credentials: true,
-  allowMethods: ['GET', 'POST', 'DELETE'],
-  allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
-}))
 .use(logger('tiny')).listen(3001)
 
 
@@ -77,10 +65,12 @@ const insertUser = async(ctx, next) => {
       ctx.throw(500, 'users table does not exist')
     }
   
-    let body = ctx.request.query || {}
+    let body = ctx.request.body || {}
+
+    console.log('получаем - ', body)
 
     // Throw the error if no name.
-    if (body.name === undefined) {
+    if (body.fullName === undefined) {
       ctx.throw(400, 'name is required')
     }
   
@@ -96,11 +86,11 @@ const insertUser = async(ctx, next) => {
 
     // Throw the error if no role.
     if (body.role === undefined) {
-      ctx.throw(400, 'role is required')
+      body.role = 'user'
     }
   
     let document = {
-      name: body.name,
+      name: body.fullName,
       email: body.email,
       password: body.password,
       role: body.role
