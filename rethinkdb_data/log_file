@@ -90,3 +90,19 @@
 2019-04-06T16:20:40.236871000 38442.133097s info: Table 51c6ec03-b188-42c6-b8be-a83e7cae78ff: Starting a new Raft election for term 1.
 2019-04-06T16:20:40.237262000 38442.133488s info: Table 51c6ec03-b188-42c6-b8be-a83e7cae78ff: Added replica on this server.
 2019-04-06T16:20:40.370735000 38442.266964s info: Table 51c6ec03-b188-42c6-b8be-a83e7cae78ff: This server is Raft leader for term 1. Latest log index is 0.
+2019-04-06T21:34:59.302674000 0.311102s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2019-04-06T21:34:59.357942000 0.366367s notice: Running on Darwin 17.7.0 x86_64
+2019-04-06T21:34:59.358004000 0.366427s notice: Loading data from directory /Users/matu1/Documents/AngularProjects/getteam-backend/rethinkdb_data
+2019-04-06T21:34:59.607653000 0.616082s info: Automatically using cache size of 1010 MB
+2019-04-06T21:34:59.608416000 0.616845s notice: Listening for intracluster connections on port 29015
+2019-04-06T21:34:59.673200000 0.681631s notice: Listening for client driver connections on port 28015
+2019-04-06T21:34:59.673441000 0.681871s notice: Listening for administrative HTTP connections on port 8080
+2019-04-06T21:34:59.673465000 0.681894s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2019-04-06T21:34:59.673469000 0.681899s notice: Listening on driver addresses: 127.0.0.1, ::1
+2019-04-06T21:34:59.673473000 0.681902s notice: Listening on http addresses: 127.0.0.1, ::1
+2019-04-06T21:34:59.673477000 0.681906s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2019-04-06T21:34:59.673480000 0.681910s notice: Server ready, "iMac_Vyacheslav_local_2yq" d38d728b-3b60-4351-8867-68e4939f0b1d
+2019-04-06T21:35:01.306266000 2.314732s info: Table 51c6ec03-b188-42c6-b8be-a83e7cae78ff: Starting a new Raft election for term 2.
+2019-04-06T21:35:01.396843000 2.405311s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: Starting a new Raft election for term 4.
+2019-04-06T21:35:01.411190000 2.419658s info: Table 51c6ec03-b188-42c6-b8be-a83e7cae78ff: This server is Raft leader for term 2. Latest log index is 2.
+2019-04-06T21:35:01.520936000 2.529406s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: This server is Raft leader for term 4. Latest log index is 8.

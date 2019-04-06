@@ -23,7 +23,6 @@ const db = async() => {
     return connection;
 }
 
-
 server
 .use(cors())
 .use(passport.initialize())
@@ -31,7 +30,6 @@ server
 .use(router.routes())
 .use(router.allowedMethods())
 .use(logger('tiny')).listen(3001)
-
 
   const getUsers = async(ctx, next) => {
       await next()
