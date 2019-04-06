@@ -1,3 +1,6 @@
+const db = require('../../models/db')
+const r = require('rethinkdb')
+
 module.exports = async(ctx, next) => {
     await next()
     let name = ctx.params.name // возможно будет ошибка, пока не проверял

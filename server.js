@@ -23,15 +23,6 @@ const ExtractJwt = require('passport-jwt').ExtractJwt; // авторизация
 const server = new Koa()
 const router = new Router()
 
-const db = async() => {
-    const connection = await r.connect({
-        host: 'localhost',
-        port: '28015',
-        db: 'getteamDB'
-    })
-    return connection;
-}
-
 server
 .use(cors())
 .use(passport.initialize())
