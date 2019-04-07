@@ -64,8 +64,7 @@ module.exports = async(ctx, next) => {
 
       // Если такой юзер существует, то берем его `id` и хешируем в токене с помощью Вашего секретного ключа
       const tokenJWT = jwt.sign({
-          id: user.id,
-          name: user.name
+        user: user
       }, SECRET, {
           expiresIn: 864e5 // 1 день
       });
