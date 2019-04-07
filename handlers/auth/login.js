@@ -1,6 +1,23 @@
 const db = require('../../models/db')
 const r = require('rethinkdb')
 
+const jwt = require('jsonwebtoken')
+const { compare } = require('bcrypt')
+const { config } = require('dotenv')
+
+const SECRET = '22ll55';
+
+const compareAsync = async(data, encrypted) => {
+  return await compare(data, encrypted, (error, same) => {
+    if (error) {
+      console.log('get error - ', error)
+        reject(error);
+    }
+    return true;
+});
+
+};
+
 module.exports = async(ctx, next) => {
     await next()
 
@@ -8,6 +25,8 @@ module.exports = async(ctx, next) => {
 
     let email = body.email
     let password = body.password
+
+    console.log(password)
 
     // Throw the error if no name.
     if (email === undefined) {
@@ -39,13 +58,39 @@ module.exports = async(ctx, next) => {
       ctx.throw(400, 'такого пользователя не существует')
     }
 
-    if (user.password === password) {
+    console.log(user.password)
+
+    if (user.password !== password) {
+      ctx.body = {
+          message: 'Invalid credentials'
+      };
+      return ctx.status = 422;
+  }
+
+      // Если такой юзер существует, то берем его `id` и хешируем в токене с помощью Вашего секретного ключа
+      const { id } = user.id;
+      const tokenJWT = jwt.sign({
+          id
+      }, SECRET, {
+          expiresIn: 864e5 // 1 день
+      });
+
+          // Далее сеттим токен в куках с флагом `httpOnly`, так безопаснее так как клиент не имеет доступ к ним
+/*     ctx.cookies.set('Authorization', `Bearer ${token}`, {
+      httpOnly: true,
+      expires: new Date(new Date().valueOf() + 864e5), // 1 день
+      secure: true
+  });
+ */  
+      ctx.body = {token: tokenJWT}
+
+/*     if (user.password === password) {
 
       ctx.body = true
 
     } else {
       ctx.throw(400, 'пароль не верный')
-    }
+    } */
 //    console.log(ctx.request.query)
   }
 

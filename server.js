@@ -15,11 +15,6 @@ const insertUser = require('./handlers/users/insertUser')
 
 const login = require('./handlers/auth/login')
 
-/* 
-const LocalStrategy = require('passport-local'); //локальная стратегия авторизации
-const JwtStrategy = require('passport-jwt').Strategy; // авторизация через JWT
-const ExtractJwt = require('passport-jwt').ExtractJwt; // авторизация через JWT
- */
 const server = new Koa()
 const router = new Router()
 

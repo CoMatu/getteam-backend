@@ -106,3 +106,24 @@
 2019-04-06T21:35:01.396843000 2.405311s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: Starting a new Raft election for term 4.
 2019-04-06T21:35:01.411190000 2.419658s info: Table 51c6ec03-b188-42c6-b8be-a83e7cae78ff: This server is Raft leader for term 2. Latest log index is 2.
 2019-04-06T21:35:01.520936000 2.529406s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: This server is Raft leader for term 4. Latest log index is 8.
+2019-04-06T23:18:56.138262000 6237.280662s notice: Server got SIGINT from pid 42330, uid 501; shutting down...
+2019-04-06T23:18:56.138388000 6237.280788s notice: Shutting down client connections...
+2019-04-06T23:18:56.138546000 6237.280946s notice: All client connections closed.
+2019-04-06T23:18:56.138560000 6237.280960s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2019-04-06T23:18:56.207041000 6237.349443s notice: Storage engine shut down.
+2019-04-07T09:28:10.553032000 0.373653s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2019-04-07T09:28:10.595368000 0.415984s notice: Running on Darwin 17.7.0 x86_64
+2019-04-07T09:28:10.595431000 0.416046s notice: Loading data from directory /Users/matu1/Documents/AngularProjects/getteam-backend/rethinkdb_data
+2019-04-07T09:28:10.818645000 0.639256s info: Automatically using cache size of 1542 MB
+2019-04-07T09:28:10.819492000 0.640103s notice: Listening for intracluster connections on port 29015
+2019-04-07T09:28:10.916450000 0.737060s notice: Listening for client driver connections on port 28015
+2019-04-07T09:28:10.916620000 0.737229s notice: Listening for administrative HTTP connections on port 8080
+2019-04-07T09:28:10.916645000 0.737254s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2019-04-07T09:28:10.916649000 0.737259s notice: Listening on driver addresses: 127.0.0.1, ::1
+2019-04-07T09:28:10.916653000 0.737262s notice: Listening on http addresses: 127.0.0.1, ::1
+2019-04-07T09:28:10.916657000 0.737266s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2019-04-07T09:28:10.916661000 0.737270s notice: Server ready, "iMac_Vyacheslav_local_2yq" d38d728b-3b60-4351-8867-68e4939f0b1d
+2019-04-07T09:28:12.368161000 2.188746s info: Table 51c6ec03-b188-42c6-b8be-a83e7cae78ff: Starting a new Raft election for term 3.
+2019-04-07T09:28:12.453405000 2.273988s info: Table 51c6ec03-b188-42c6-b8be-a83e7cae78ff: This server is Raft leader for term 3. Latest log index is 6.
+2019-04-07T09:28:12.838910000 2.659487s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: Starting a new Raft election for term 5.
+2019-04-07T09:28:13.019971000 2.840544s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: This server is Raft leader for term 5. Latest log index is 11.
