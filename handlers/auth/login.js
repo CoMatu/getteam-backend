@@ -7,7 +7,7 @@ const { config } = require('dotenv')
 
 const SECRET = '22ll55';
 
-const compareAsync = async(data, encrypted) => {
+/* const compareAsync = async(data, encrypted) => {
   return await compare(data, encrypted, (error, same) => {
     if (error) {
       console.log('get error - ', error)
@@ -17,7 +17,7 @@ const compareAsync = async(data, encrypted) => {
 });
 
 };
-
+ */
 module.exports = async(ctx, next) => {
     await next()
 
@@ -25,8 +25,6 @@ module.exports = async(ctx, next) => {
 
     let email = body.email
     let password = body.password
-
-    console.log(password)
 
     // Throw the error if no name.
     if (email === undefined) {
@@ -57,9 +55,6 @@ module.exports = async(ctx, next) => {
     if (user === null) {
       ctx.throw(400, 'такого пользователя не существует')
     }
-
-    console.log(user.password)
-
     if (user.password !== password) {
       ctx.body = {
           message: 'Invalid credentials'
@@ -68,9 +63,9 @@ module.exports = async(ctx, next) => {
   }
 
       // Если такой юзер существует, то берем его `id` и хешируем в токене с помощью Вашего секретного ключа
-      const { id } = user.id;
       const tokenJWT = jwt.sign({
-          id
+          id: user.id,
+          name: user.name
       }, SECRET, {
           expiresIn: 864e5 // 1 день
       });
@@ -84,13 +79,5 @@ module.exports = async(ctx, next) => {
  */  
       ctx.body = {token: tokenJWT}
 
-/*     if (user.password === password) {
-
-      ctx.body = true
-
-    } else {
-      ctx.throw(400, 'пароль не верный')
-    } */
-//    console.log(ctx.request.query)
   }
 
