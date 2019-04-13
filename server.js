@@ -9,6 +9,8 @@ const r = require('rethinkdb')
 const addPerson = require('./handlers/people/addPerson')
 const getPeople = require('./handlers/people/getPeople')
 
+const addDepartment = require('./handlers/departments/addDepartment')
+
 const getUsers = require('./handlers/users/getUsers')
 const getUser = require('./handlers/users/getUser')
 const insertUser = require('./handlers/users/insertUser')
@@ -33,4 +35,5 @@ router
 .post('/users/auth/sign-up', insertUser)
 .get('/people', getPeople)
 .post('/people/add', addPerson)
+.post('/department/add', addDepartment)
 
