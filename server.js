@@ -10,6 +10,7 @@ const addPerson = require('./handlers/people/addPerson')
 const getPeople = require('./handlers/people/getPeople')
 
 const addDepartment = require('./handlers/departments/addDepartment')
+const getDepartments = require('./handlers/departments/getDepartments')
 
 const getUsers = require('./handlers/users/getUsers')
 const getUser = require('./handlers/users/getUser')
@@ -36,4 +37,5 @@ router
 .get('/people', getPeople)
 .post('/people/add', addPerson)
 .post('/department/add', addDepartment)
+.get('/departments', getDepartments)
 

@@ -13,8 +13,11 @@ module.exports = async(ctx, next) => {
     ctx.throw(500, 'people table does not exist')
   }
 
+  let userId = ctx.query.userId || {}
+
   // Retrieve documents.
   var cursor = await r.table('people')
+    .filter(r.row('userId').eq(userId))
     .run(connection)
 
   var people = await cursor.toArray()
