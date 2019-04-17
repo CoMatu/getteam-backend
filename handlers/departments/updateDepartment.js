@@ -13,15 +13,15 @@ module.exports = async(ctx, next) => {
     ctx.throw(500, 'people table does not exist')
   }
 
-  let userId = ctx.query.userId || {}
+  let id = ctx.query.id || {}
+  let nameNew = ctx.query.name || {}
 
   // Retrieve documents.
   var cursor = await r.table('departments')
-    .filter(r.row('userId').eq(userId))
+    .filter(r.row('id').eq(id))
+    .update({name: nameNew})
     .run(connection)
 
-  var departments = await cursor.toArray()
-
   ctx.type = 'json'
-  ctx.body = departments
+  ctx.body = cursor
   }
