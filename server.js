@@ -12,6 +12,7 @@ const getPeople = require('./handlers/people/getPeople')
 const addDepartment = require('./handlers/departments/addDepartment')
 const getDepartments = require('./handlers/departments/getDepartments')
 const deleteDepartment = require('./handlers/departments/deleteDepartment')
+const updateDepartment = require('./handlers/departments/updateDepartment')
 
 const getUsers = require('./handlers/users/getUsers')
 const getUser = require('./handlers/users/getUser')
@@ -40,4 +41,4 @@ router
 .post('/department/add', addDepartment)
 .get('/departments', getDepartments)
 .delete('/department/delete', deleteDepartment)
-
+.put('/department/update', updateDepartment)
