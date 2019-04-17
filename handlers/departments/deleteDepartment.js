@@ -13,16 +13,23 @@ module.exports = async(ctx, next) => {
     ctx.throw(500, 'departments table does not exist')
   }
 
+  let userId = ctx.query.userId || {}
+
   let id = ctx.query.id || {}
   console.log('проверка по ИД', userId)
+  console.log('object id ', id)
 
   // Retrieve documents.
   var cursor = await r.table('departments')
     .filter(r.row('id').eq(id))
-    .run(connection)
+    .delete()
+    .run(connection, function(err, result) {
+      if (err) throw err;
+      console.log(JSON.stringify(result, null, 2));
+  })
 
-  var departments = await cursor.toArray()
+//  var departments = await cursor.toArray()
 
   ctx.type = 'json'
-  ctx.body = departments
+  ctx.body = cursor
   }

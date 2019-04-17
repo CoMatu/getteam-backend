@@ -39,5 +39,5 @@ router
 .post('/people/add', addPerson)
 .post('/department/add', addDepartment)
 .get('/departments', getDepartments)
-.delete('/departments/delete', deleteDepartment)
+.delete('/department/delete', deleteDepartment)
 

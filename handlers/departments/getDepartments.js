@@ -14,7 +14,6 @@ module.exports = async(ctx, next) => {
   }
 
   let userId = ctx.query.userId || {}
-  console.log('проверка по ИД', userId)
 
   // Retrieve documents.
   var cursor = await r.table('departments')
