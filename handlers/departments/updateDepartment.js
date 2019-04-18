@@ -10,7 +10,7 @@ module.exports = async(ctx, next) => {
   // Check if a table exists.
   var exists = await r.tableList().contains('departments').run(connection)
   if (exists === false) {
-    ctx.throw(500, 'people table does not exist')
+    ctx.throw(500, 'departments table does not exist')
   }
 
   let id = ctx.query.id || {}
