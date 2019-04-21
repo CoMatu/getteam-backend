@@ -12,23 +12,19 @@ module.exports = async(ctx, next) => {
       ctx.throw(500, 'people table does not exist')
     }
 
-    let body = ctx.request.query || {}
+    let body = ctx.request.body || {}
 
-    console.log('fddfss -', ctx.request.body.name)
-
-    console.log('получаем - ', body)
+    console.log('name -', ctx.request.body.name)
 
     let document = {
       userId: body.userId, // для разграничения по пользователям
       name: body.name,
-      middleName: body.middleName,
-      surname: body.surname,
-      date: '',
-      email: body.email,
-      phone_1: '',
-      phone_2: '',
-      positionId: '',
-      departmentId: ''
+      date: body.date,
+      email: body.email || '',
+      phone_1: body.phone_1 || '',
+      phone_2: body.phone_2 || '',
+      positionId: body.positionId || '',
+      departmentId: body.departmentId || ''
     }
 
     var result = await r.table('people')
