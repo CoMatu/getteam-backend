@@ -53,5 +53,5 @@ router
 .put('/position/update', updatePosition)
 .get('/people', getPeople)
 .post('/people/add', addPerson)
-.post('/people/delete', deletePerson)
-.post('/people/update', updatePerson)
+.delete('/people/delete', deletePerson)
+.put('/people/update', updatePerson)

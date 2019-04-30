@@ -24,7 +24,8 @@ module.exports = async(ctx, next) => {
       phone_1: body.phone_1 || '',
       phone_2: body.phone_2 || '',
       positionId: body.positionId || '',
-      departmentId: body.departmentId || ''
+      departmentId: body.departmentId || '',
+      role: body.role || ''
     }
 
     var result = await r.table('people')
