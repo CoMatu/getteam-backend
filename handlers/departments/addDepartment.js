@@ -6,9 +6,6 @@ module.exports = async(ctx, next) => {
 
     const connection = await db()
 
-    // TODO нужна проверка на дублирование имен подразделений
-    
-    // Throw the error if the table does not exist.
     var exists = await r.tableList().contains('departments').run(connection)
     if (exists === false) {
       ctx.throw(500, 'departments table does not exist')

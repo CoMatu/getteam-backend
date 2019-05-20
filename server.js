@@ -4,7 +4,6 @@ const logger = require('koa-morgan')
 const bodyParser = require('koa-bodyparser')
 const passport = require('koa-passport'); //реализация passport для Koa
 const Router = require('koa-router')
-const r = require('rethinkdb')
 
 const addPerson = require('./handlers/people/addPerson')
 const getPeople = require('./handlers/people/getPeople')
@@ -20,6 +19,9 @@ const addPosition = require('./handlers/positions/addPosition')
 const getPositions = require('./handlers/positions/getPositions')
 const deletePosition = require('./handlers/positions/deletePosition')
 const updatePosition = require('./handlers/positions/updatePosition')
+
+const addPoll = require('./handlers/polls/addPoll')
+const getPolls = require('./handlers/polls/getPolls')
 
 const getUsers = require('./handlers/users/getUsers')
 const getUser = require('./handlers/users/getUser')
@@ -43,15 +45,21 @@ router
 .get('/users/:name', getUser)
 .post('/users/auth/sign-in', login)
 .post('/users/auth/sign-up', insertUser)
+
 .post('/department/add', addDepartment)
 .get('/departments', getDepartments)
 .delete('/department/delete', deleteDepartment)
 .put('/department/update', updateDepartment)
+
 .post('/position/add', addPosition)
 .get('/positions', getPositions)
 .delete('/position/delete', deletePosition)
 .put('/position/update', updatePosition)
+
 .get('/people', getPeople)
 .post('/people/add', addPerson)
 .delete('/people/delete', deletePerson)
 .put('/people/update', updatePerson)
+
+.post('/polls/add', addPoll)
+.get('/polls', getPolls)
