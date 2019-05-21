@@ -22,6 +22,7 @@ const updatePosition = require('./handlers/positions/updatePosition')
 
 const addPoll = require('./handlers/polls/addPoll')
 const getPolls = require('./handlers/polls/getPolls')
+const deletePoll = require('./handlers/polls/deletePoll')
 
 const getUsers = require('./handlers/users/getUsers')
 const getUser = require('./handlers/users/getUser')
@@ -63,3 +64,4 @@ router
 
 .post('/polls/add', addPoll)
 .get('/polls', getPolls)
+.delete('/polls/delete', deletePoll)
