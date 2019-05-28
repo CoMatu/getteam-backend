@@ -25,6 +25,11 @@ const getPolls = require('./handlers/polls/getPolls')
 const deletePoll = require('./handlers/polls/deletePoll')
 const updatePoll = require('./handlers/polls/updatePoll')
 
+const addTest = require('./handlers/tests/addTest')
+const getTests = require('./handlers/tests/getTests')
+const deleteTest = require('./handlers/tests/deleteTest')
+const updateTest = require('./handlers//tests/updateTest')
+
 const getUsers = require('./handlers/users/getUsers')
 const getUser = require('./handlers/users/getUser')
 const insertUser = require('./handlers/users/insertUser')
@@ -67,3 +72,8 @@ router
 .get('/polls', getPolls)
 .delete('/polls/delete', deletePoll)
 .post('/polls/update', updatePoll)
+
+.post('/tests/add', addTest)
+.get('/tests', getTests)
+.delete('/tests/delete', deleteTest)
+.post('/tests/update', updateTest)

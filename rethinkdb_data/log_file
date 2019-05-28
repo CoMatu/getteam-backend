@@ -665,3 +665,6 @@
 2019-05-22T22:15:48.698379000 3.673102s info: Table b0f1c530-8351-423e-af69-03448dc89b84: Starting a new Raft election for term 13.
 2019-05-22T22:15:49.021674000 3.996398s info: Table d7276ad1-14c1-43a8-8f98-e33676c52bdc: This server is Raft leader for term 28. Latest log index is 90.
 2019-05-22T22:15:49.021739000 3.996462s info: Table b0f1c530-8351-423e-af69-03448dc89b84: This server is Raft leader for term 13. Latest log index is 46.
+2019-05-28T19:39:38.129004000 268839.983773s info: Table 7ab88673-6e1e-4ee0-a376-56e57dfda0ab: Starting a new Raft election for term 1.
+2019-05-28T19:39:38.129148000 268839.983916s info: Table 7ab88673-6e1e-4ee0-a376-56e57dfda0ab: Added replica on this server.
+2019-05-28T19:39:38.270652000 268840.125423s info: Table 7ab88673-6e1e-4ee0-a376-56e57dfda0ab: This server is Raft leader for term 1. Latest log index is 0.
